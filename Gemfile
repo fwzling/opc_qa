@@ -15,6 +15,9 @@ gem 'will_paginate'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
+gem 'activerecord-oracle_enhanced-adapter', '~> 1.7.0'
+gem 'ruby-oci8'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
