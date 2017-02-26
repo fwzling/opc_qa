@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225184701) do
+ActiveRecord::Schema.define(version: 20170226134204) do
 
   create_table "services", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "admin_user"
     t.string   "domain_name"
     t.string   "doc_service_name"
     t.string   "osn_service_name"
-    t.date     "service_created_at"
+    t.datetime "service_created_at"
     t.boolean  "is_terminated"
     t.integer  "instances_per_account"
     t.datetime "created_at",            null: false

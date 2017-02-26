@@ -12,6 +12,8 @@ gem 'rails', '~> 5.0.1'
 gem 'mysql2'
 gem 'unicorn'
 gem 'will_paginate'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

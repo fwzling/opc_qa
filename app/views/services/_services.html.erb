@@ -1,0 +1,13 @@
+<table id="services_list" class="table table-condensed table-hover table-striped">
+  <%= render partial: 'services_thead' %>
+  <tbody>
+    <%= render partial: 'service', collection: services, as: :service %>
+  </tbody>
+</table>
+
+<script>
+  $(document).ready(function() {
+    $('#services_list').DataTable();
+  });
+
+</script>
