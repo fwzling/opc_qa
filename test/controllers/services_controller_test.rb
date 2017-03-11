@@ -1,48 +1,49 @@
 require 'test_helper'
 
-class ServicesControllerTest < ActionDispatch::IntegrationTest
+class ServicesControllerTest < ActionController::TestCase
   setup do
     @service = services(:one)
   end
 
   test "should get index" do
-    get services_url
+    get :index
     assert_response :success
+    assert_not_nil assigns(:services)
   end
 
   test "should get new" do
-    get new_service_url
+    get :new
     assert_response :success
   end
 
   test "should create service" do
     assert_difference('Service.count') do
-      post services_url, params: { service: { admin_user: @service.admin_user, doc_service_name: @service.doc_service_name, domain_name: @service.domain_name, instances_per_account: @service.instances_per_account, is_terminated: @service.is_terminated, osn_service_name: @service.osn_service_name, service_created_at: @service.service_created_at } }
+      post :create, service: { admin_user: @service.admin_user }
     end
 
-    assert_redirected_to service_url(Service.last)
+    assert_redirected_to service_path(assigns(:service))
   end
 
   test "should show service" do
-    get service_url(@service)
+    get :show, id: @service
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_service_url(@service)
+    get :edit, id: @service
     assert_response :success
   end
 
   test "should update service" do
-    patch service_url(@service), params: { service: { admin_user: @service.admin_user, doc_service_name: @service.doc_service_name, domain_name: @service.domain_name, instances_per_account: @service.instances_per_account, is_terminated: @service.is_terminated, osn_service_name: @service.osn_service_name, service_created_at: @service.service_created_at } }
-    assert_redirected_to service_url(@service)
+    patch :update, id: @service, service: { admin_user: @service.admin_user }
+    assert_redirected_to service_path(assigns(:service))
   end
 
   test "should destroy service" do
     assert_difference('Service.count', -1) do
-      delete service_url(@service)
+      delete :destroy, id: @service
     end
 
-    assert_redirected_to services_url
+    assert_redirected_to services_path
   end
 end

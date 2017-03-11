@@ -5,35 +5,5 @@
   <%= @service.admin_user %>
 </p>
 
-<p>
-  <strong>Domain name:</strong>
-  <%= @service.domain_name %>
-</p>
-
-<p>
-  <strong>Doc service name:</strong>
-  <%= @service.doc_service_name %>
-</p>
-
-<p>
-  <strong>Osn service name:</strong>
-  <%= @service.osn_service_name %>
-</p>
-
-<p>
-  <strong>Service created at:</strong>
-  <%= @service.service_created_at %>
-</p>
-
-<p>
-  <strong>Is terminated:</strong>
-  <%= @service.is_terminated %>
-</p>
-
-<p>
-  <strong>Instances per account:</strong>
-  <%= @service.instances_per_account %>
-</p>
-
 <%= link_to 'Edit', edit_service_path(@service) %> |
 <%= link_to 'Back', services_path %>

@@ -1,10 +1,10 @@
-<%= form_for(service) do |f| %>
-  <% if service.errors.any? %>
+<%= form_for(@service) do |f| %>
+  <% if @service.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
+      <h2><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h2>
 
       <ul>
-      <% service.errors.full_messages.each do |message| %>
+      <% @service.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,40 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :admin_user %>
+    <%= f.label :admin_user %><br>
     <%= f.text_field :admin_user %>
   </div>
-
-  <div class="field">
-    <%= f.label :domain_name %>
-    <%= f.text_field :domain_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :doc_service_name %>
-    <%= f.text_field :doc_service_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :osn_service_name %>
-    <%= f.text_field :osn_service_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :service_created_at %>
-    <%= f.date_select :service_created_at %>
-  </div>
-
-  <div class="field">
-    <%= f.label :is_terminated %>
-    <%= f.check_box :is_terminated %>
-  </div>
-
-  <div class="field">
-    <%= f.label :instances_per_account %>
-    <%= f.number_field :instances_per_account %>
-  </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,5 +1,4 @@
 class ServicesController < ApplicationController
-  skip_before_filter :verify_authenticity_token, :only => :create
   before_action :set_service, only: [:show, :edit, :update, :destroy]
 
   # GET /services
@@ -70,6 +69,6 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:admin_user, :domain_name, :doc_service_name, :osn_service_name, :service_created_at, :is_terminated, :instances_per_account)
+      params.require(:service).permit(:admin_user)
     end
 end
